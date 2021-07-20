@@ -2,7 +2,7 @@
 void main()
 {
 int n,i,j,sum=0;
-printf("Enter the number of odd numbers you wish to print: \n ");
+printf("Enter the number of first odd numbers you wish to print the sum of squares of: \n ");
 scanf("%d",&n);
 for(i=1;i<=(n*2);i++)
 {
@@ -13,3 +13,4 @@ sum=sum+(i*i);
 }
 printf("The sum of squares of first %d odd numbers = %d",n,sum);
 }
+
