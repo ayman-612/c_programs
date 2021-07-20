@@ -1,19 +1,28 @@
-#include <stdio.h>
-#include <math.h>
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
 void main()
-{  int a, b, c, d;
-  double root1, root2;
-  printf("Enter a, b and c for a quadratic equation where a*x*x + b*x + c = 0\n");
-  scanf("%d%d%d", &a, &b, &c);
-  d = b*b - 4*a*c;
-  if (d < 0)
-  { printf("First root = %lf + i%lf\n", (double)-b/(2*a), sqrt(-d)/(2*a));
-    printf("Second root = %.lf - i%lf\n", (double)-b/(2*a), sqrt(-d)/(2*a));
-  }
-  else
-  { root1 = (-b + sqrt(d))/(2*a);
-    root2 = (-b - sqrt(d))/(2*a);
-    printf("First root = %.lf\n", root1);
-    printf("Second root = %lf\n", root2);
-  }
-}
+{
+    float a, b, c, det, root1, root2, real, img;
+    printf("\n Enter the value of coefficient a, b and c: \n ");
+    scanf("%f %f %f", &a, &b, &c);
+    det = (b * b) - (4 * a * c);
+    if (det > 0)
+    {
+    root1 = (-b + sqrt(det)) / (2 * a);
+    root2 = (-b - sqrt(det)) / (2 * a);
+    printf("Value of root1 = %f \nValue of root2 = %f\n", root1, root2);
+    }
+    else if (det == 0)
+    {
+        root1 = root2 = -b / (2 * a);
+        printf("Value of root1 = %f \nValue of root2 = %f\n", root1, root2);
+    }
+    else
+    {
+        real = -b / (2 * a);
+        img = sqrt(-det) / (2 * a);
+        printf("\n value of root1 = %f + %fi \nValue of root2 = %f - %fi ", real, img, real, img);
+    }
+    }
+
